@@ -1,0 +1,117 @@
+:root {
+  --Red: hsl(0, 78%, 62%);
+  --Cyan: hsl(180, 62%, 55%);
+  --Orange: hsl(34, 97%, 64%);
+  --Blue: hsl(212, 86%, 64%);
+  --Very-Dark-Blue: hsl(234, 12%, 34%);
+  --Grayish-Blue: hsl(229, 6%, 66%);
+  --Very-Light-Gray: hsl(0, 0%, 90%);
+  --black: hsl(0, 0, 15%);
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  background-color: var(--Very-Light-Gray);
+}
+
+.card {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 0;
+  text-align: center;
+}
+.card_title {
+  font-size: 1.7rem;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+.card_title_bold {
+  font-weight: 600;
+}
+
+.card_paragraph {
+  line-height: 1.5;
+  color: var(--black);
+  margin-top: 1.5em;
+  margin: 1.5em auto;
+  max-width: 450px;
+}
+
+.card_container {
+  display: grid;
+  margin-top: 40px;
+  padding-top: 50px;
+  text-align: left;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "card1"
+    "card2"
+    "card3"
+    "card4";
+  justify-items: center;
+  gap: 2.5em;
+}
+
+.card_item {
+  width: 90%;
+  max-width: 350px;
+  padding: 1.5em 1.7em;
+  box-shadow: 0 4px 20px -6px hsl(212, 86%, 64%, 0.5);
+  grid-area: card1;
+  border-top: 4px solid var(--Cyan);
+}
+
+.card_item:nth-child(2) {
+  border-top: 4px solid var(--Red);
+  grid-area: card2;
+}
+
+.card_item:nth-child(3) {
+  border-top: 4px solid var(--Orange);
+  grid-area: card3;
+}
+
+.card_item:nth-child(4) {
+  border-top: 4px solid var(--Blue);
+  grid-area: card4;
+}
+
+.card_name {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card_copy {
+  color: var(--black);
+  font-weight: 200;
+  padding-bottom: 40px;
+}
+
+.card_picture {
+  width: max-content;
+  margin-left: auto;
+}
+
+.card_img {
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .card_container {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      ".      card1      ."
+      "card2  card1  card3"
+      "card2  card4  card3"
+      ".      card4      .";
+
+    gap: 2em;
+  }
+}
